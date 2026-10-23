@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma Híbrido · Ejecución y Evaluación · Ficha 3186697 · SENA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ── PALETA ZAJUNA / SENA ────────────────────────── */
+    :root {
+      --v1: #3d6b28;
+      /* verde oscuro */
+      --v2: #5a8f3c;
+      /* verde logo ZAJUNA */
+      --v3: #6db224;
+      /* verde bright */
+      --v-bg: #f2f7ee;
+      /* fondo verde muy suave */
+      --v-bdr: #d3e8c4;
+      /* borde suave */
+      --v-row: #f7fbf3;
+      /* fila hover */
+      --navy: #1e2e4a;
+      /* azul marino */
+      --navy2: #2a3f6a;
+      /* azul medio */
+      --blanco: #ffffff;
+      --texto: #1e2e2e;
+      --sombra: 0 3px 18px rgba(61, 107, 40, .13);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--v-bg);
+      color: var(--texto);
+      min-height: 100vh;
+    }
+
+    /* ══ HEADER ═══════════════════════════════════════ */
+    .hdr {
+      background: linear-gradient(135deg, var(--v1) 0%, var(--v2) 55%, var(--v3) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hdr::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 22px, rgba(255, 255, 255, .03) 22px, rgba(255, 255, 255, .03) 44px);
+    }
+
+    .hdr-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 60px 1fr 60px;
+      align-items: center;
+      padding: 18px 32px;
+      gap: 16px;
+    }
+
+    .hdr-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .15);
+      border: 2px solid rgba(255, 255, 255, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hdr-logo i {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .hdr-center {
+      text-align: center;
+    }
+
+    .hdr-tag {
+      font-size: 9.5px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, .72);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .hdr-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    }
+
+    .hdr-prog {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #d4f0a0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 3px;
+    }
+
+    .hdr-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .8);
+      margin-top: 2px;
+    }
+
+    .hdr-badge {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, .13);
+      border: 1.5px solid rgba(255, 255, 255, .25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hdr-badge i {
+      color: #d4f0a0;
+      font-size: 22px;
+    }
+
+    /* Banda de fechas */
+    .date-band {
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 8px 32px;
+    }
+
+    .di {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .di i {
+      color: var(--v3);
+      font-size: 12px;
+    }
+
+    .di span {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .65);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .di strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14.5px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    /* ══ FILTROS + TOOLBAR ════════════════════════════ */
+    .filters {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      background: var(--blanco);
+      border-bottom: 2px solid var(--v-bdr);
+      padding: 6px 32px;
+      gap: 6px 12px;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      padding: 3px 12px 3px 0;
+      border-right: 1px solid var(--v-bdr);
+    }
+
+    .filter-group:last-child {
+      border-right: none;
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .fl {
+      font-size: 9px;
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: .5px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .fl i {
+      color: var(--v2);
+      font-size: 9px;
+    }
+
+    .fb {
+      padding: 3px 8px;
+      border-radius: 14px;
+      border: 1.5px solid var(--v-bdr);
+      background: var(--v-bg);
+      color: var(--texto);
+      cursor: pointer;
+      font-size: 9.5px;
+      font-family: 'Barlow', sans-serif;
+      transition: all .18s;
+      white-space: nowrap;
+    }
+
+    .fb.active {
+      background: var(--v2);
+      color: #fff;
+      border-color: var(--v2);
+    }
+
+    .fb:hover:not(.active) {
+      background: var(--v-bdr);
+      border-color: var(--v2);
+    }
+
+    .fb.navy.active {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .fb.navy:hover:not(.active) {
+      background: #e8edf4;
+      border-color: var(--navy2);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all .18s;
+    }
+
+    .btn-g {
+      background: var(--v2);
+      color: #fff;
+    }
+
+    .btn-g:hover {
+      background: var(--v1);
+      transform: translateY(-1px);
+    }
+
+    .btn-o {
+      background: transparent;
+      border: 1.5px solid var(--v2);
+      color: var(--v2);
+    }
+
+    .btn-o:hover {
+      background: var(--v-bg);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-navy:hover {
+      background: var(--navy2);
+      transform: translateY(-1px);
+    }
+
+    .btn-pdf {
+      background: linear-gradient(135deg, #c62828, #e53935);
+      color: #fff;
+    }
+
+    .btn-pdf:hover {
+      filter: brightness(.9);
+      transform: translateY(-1px);
+    }
+
+    .btn-clear {
+      background: transparent;
+      border: 1.5px solid #ccc;
+      color: #888;
+      font-size: 9px;
+      padding: 3px 8px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      transition: all .18s;
+      white-space: nowrap;
+    }
+
+    .btn-clear:hover {
+      border-color: #e53935;
+      color: #e53935;
+      background: #fff5f5;
+    }
+
+
+    .filter-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 32px;
+      background: linear-gradient(90deg, #f7fbf3, #eaf2e3);
+      border-bottom: 1px solid var(--v-bdr);
+      font-size: 11px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--navy);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    .filter-tag i {
+      font-size: 8px;
+      cursor: pointer;
+      opacity: .7;
+      transition: opacity .15s;
+    }
+
+    .filter-tag i:hover {
+      opacity: 1;
+    }
+
+    .result-count {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--v1);
+      letter-spacing: .5px;
+    }
+
+    .result-count span {
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    /* ══ CONTENT ══════════════════════════════════════ */
+    .content {
+      padding: 20px 32px;
+    }
+
+    .fase-block {
+      margin-bottom: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      border: 1px solid var(--v-bdr);
+    }
+
+    .fh {
+      background: linear-gradient(90deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 11px 20px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      cursor: pointer;
+    }
+
+    .fi2 {
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 255, 255, .15);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fi2 i {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .ft {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      flex: 1;
+    }
+
+    .ficha-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 6px;
+      padding: 3px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .ftog {
+      color: rgba(255, 255, 255, .7);
+      font-size: 12px;
+      transition: transform .3s;
+    }
+
+    .fase-block.collapsed .ftog {
+      transform: rotate(-90deg);
+    }
+
+    .fase-block.collapsed .tw {
+      display: none;
+    }
+
+    /* ── TABLA ───────────────────────────────────────── */
+    .tw {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+    }
+
+    thead tr {
+      background: var(--v2);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    thead th {
+      padding: 8px 10px;
+      text-align: left;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700;
+      border-right: 1px solid rgba(255, 255, 255, .15);
+      white-space: nowrap;
+    }
+
+    thead th:last-child {
+      border-right: none;
+    }
+
+    tbody td {
+      padding: 7px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--v-bdr);
+      border-right: 1px solid #eaf2e3;
+      line-height: 1.4;
+    }
+
+    tbody td:last-child {
+      border-right: none;
+    }
+
+    tbody tr:hover td {
+      background: var(--v-row);
+    }
+
+    /* merged cells */
+    .c-ap {
+      background: #f5fbee !important;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--navy);
+      vertical-align: top !important;
+      min-width: 148px;
+      max-width: 155px;
+    }
+
+    .c-ap .ap-tag {
+      display: inline-block;
+      background: var(--v2);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9.5px;
+      padding: 1px 7px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+      letter-spacing: .5px;
+    }
+
+    .c-ra {
+      background: #f9fdf5 !important;
+      font-size: 10px;
+      color: #3d5a3e;
+      vertical-align: top !important;
+      min-width: 145px;
+      max-width: 152px;
+    }
+
+    .c-aa {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--navy2);
+      vertical-align: top !important;
+      min-width: 162px;
+      max-width: 170px;
+    }
+
+    .aa-code {
+      display: block;
+      font-size: 9px;
+      color: #7a9a7a;
+      font-weight: 400;
+      margin-top: 3px;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: .5px;
+    }
+
+    /* dates */
+    .date-s {
+      font-weight: 700;
+      color: var(--v1);
+      font-size: 11px;
+    }
+
+    .date-e {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 11px;
+    }
+
+    /* semana badge */
+    .sem-wrap {
+      text-align: center;
+      min-width: 58px;
+    }
+
+    .sem-b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 5px;
+      letter-spacing: .5px;
+    }
+
+    .sem-r {
+      font-size: 9px;
+      color: #8aab8a;
+      margin-top: 2px;
+      display: block;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* tipo badge */
+    .col-tipo {
+      text-align: center;
+      min-width: 105px;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .tbadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 9px;
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .t-c {
+      background: #e3f0d4;
+      color: #3d6b28;
+    }
+
+    .t-d {
+      background: #fff3cd;
+      color: #7a5c00;
+    }
+
+    .t-p {
+      background: #dde9fa;
+      color: #1e2e4a;
+    }
+
+    /* evidencia */
+    .ev-t {
+      font-size: 10.5px;
+      color: var(--texto);
+      min-width: 195px;
+      max-width: 220px;
+    }
+
+    .ev-link {
+      color: var(--navy2);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--v2);
+    }
+
+    .ev-link:hover {
+      color: var(--v2);
+      border-bottom-style: solid;
+    }
+
+    .ev-c {
+      font-size: 9px;
+      color: #8aab8a;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: .4px;
+      margin-top: 2px;
+    }
+
+    .cod-tag { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.5px; padding:1px 7px; border-radius:5px; margin-bottom:4px; }
+    .cod-ra { background:#e3f0d4; color:#3d6b28; }
+    .cod-ga { background:var(--navy); color:#fff; }
+    .ev-rel { display:flex; flex-wrap:wrap; gap:3px; margin-top:4px; }
+    .rel-chip { font-family:'Barlow Condensed',sans-serif; font-size:9px; font-weight:600; letter-spacing:.4px; background:#eef3f9; color:var(--navy2); border:1px solid #d5e0ee; border-radius:4px; padding:0 5px; }
+    .rel-comp { background:#f2f7ee; color:var(--v1); border-color:var(--v-bdr); }
+    /* area */
+    .ar-b {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      min-width: 108px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .ar-tecnico {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .ar-bilinguismo {
+      background: #fff8e1;
+      color: #f57f17;
+    }
+
+    .ar-cultfisica {
+      background: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .ar-sst {
+      background: #fce4ec;
+      color: #b71c1c;
+    }
+
+    .ar-cultpaz {
+      background: #ede7f6;
+      color: #4527a0;
+    }
+
+    .ar-emprendimiento {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .ar-derechos {
+      background: #e0f2f1;
+      color: #00695c;
+    }
+
+    .ar-other {
+      background: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .no-rows td {
+      text-align: center;
+      color: #aaa;
+      padding: 24px !important;
+      font-style: italic;
+    }
+
+    /* ══ LOADING ══════════════════════════════════════ */
+    .lov {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(242, 247, 238, .92);
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .lov.show {
+      display: flex;
+    }
+
+    .sp {
+      width: 42px;
+      height: 42px;
+      border: 4px solid var(--v-bdr);
+      border-top-color: var(--v2);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .lt {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--v1);
+      text-transform: uppercase;
+    }
+
+    .no-data {
+      padding: 52px;
+      text-align: center;
+      color: #aaa;
+    }
+
+    .no-data i {
+      font-size: 44px;
+      color: #ccc;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* ══ FOOTER ═══════════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, .65);
+      text-align: center;
+      padding: 14px 32px;
+      font-size: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+
+    footer span {
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* ══ PRINT ════════════════════════════════════════ */
+    @page {
+      margin: 0;
+      size: landscape;
+    }
+
+    @media print {
+
+      .toolbar,
+      .filters,
+      .filter-summary,
+      .lov,
+      footer {
+        display: none !important;
+      }
+
+      .col-sem,
+      .sem-wrap {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        margin: 0;
+        padding: 6mm 8mm;
+      }
+
+      .hdr {
+        break-after: avoid;
+        overflow: hidden;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hdr::before {
+        display: none;
+      }
+
+      .hdr-inner {
+        padding: 8px 12px;
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hdr-logo,
+      .hdr-badge {
+        display: none;
+      }
+
+      .hdr-h1 {
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      .hdr-tag {
+        font-size: 8px;
+        letter-spacing: 2px;
+      }
+
+      .hdr-prog {
+        font-size: 10px;
+      }
+
+      .hdr-sub {
+        font-size: 9px;
+      }
+
+      .date-band {
+        padding: 4px 10px;
+        gap: 20px;
+      }
+
+      .di strong {
+        font-size: 12px;
+      }
+
+      .di span {
+        font-size: 8px;
+      }
+
+      .content {
+        padding: 4px 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .fase-block.collapsed .tw {
+        display: block !important;
+      }
+
+      .fase-block {
+        margin-bottom: 10px;
+        overflow: visible;
+      }
+
+      .tw {
+        overflow: visible !important;
+        max-width: 100%;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 9px;
+        table-layout: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      thead th,
+      tbody td {
+        min-width: 0 !important;
+        max-width: none !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal !important;
+      }
+
+      thead th {
+        font-size: 8px;
+        padding: 4px 5px;
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 3px 5px;
+        font-size: 8.5px;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .fi2 {
+        display: none !important;
+      }
+
+      .ftog {
+        display: none !important;
+      }
+
+      .fh {
+        cursor: default;
+        padding: 6px 14px;
+        min-height: 0;
+      }
+
+      .ft {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-align: left;
+        line-height: 1.2;
+      }
+
+      .ficha-badge {
+        font-size: 10px;
+        padding: 2px 8px;
+      }
+
+      .col-tipo {
+        display: table-cell !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+      }
+
+      #printFooter {
+        display: block !important;
+        background: var(--navy);
+        color: rgba(255, 255, 255, .65);
+        text-align: center;
+        padding: 8px 14px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        margin-top: 10px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      #printFooter span {
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+
+      footer {
+        display: none !important;
+      }
+
+      .ev-link {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: #5a8f3c;
+      }
+
+      .ev-t {
+        font-size: 8.5px;
+        min-width: 0 !important;
+        max-width: none !important;
+      }
+
+      .ev-c {
+        font-size: 7.5px;
+      }
+
+      .ar-b {
+        font-size: 8.5px;
+        min-width: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      .c-ap {
+        font-size: 8.5px;
+        min-width: 0 !important;
+        max-width: none !important;
+        width: 12%;
+      }
+
+      .c-ra {
+        font-size: 8px;
+        min-width: 0 !important;
+        max-width: none !important;
+        width: 15%;
+      }
+
+      .c-aa {
+        font-size: 8.5px;
+        min-width: 0 !important;
+        max-width: none !important;
+        width: 14%;
+      }
+
+      col.col-ap {
+        width: 12%;
+      }
+
+      thead th:nth-child(1) {
+        width: 12%;
+      }
+
+      thead th:nth-child(2) {
+        width: 15%;
+      }
+
+      thead th:nth-child(3) {
+        width: 14%;
+      }
+
+      thead th:nth-child(4) {
+        width: 6%;
+      }
+
+      thead th:nth-child(5) {
+        width: 6%;
+      }
+
+      thead th:nth-child(6) {
+        display: none !important;
+      }
+
+      thead th:nth-child(7),
+      th.col-tipo {
+        width: 9%;
+        text-align: center;
+      }
+
+      thead th:nth-child(8) {
+        width: 25%;
+      }
+
+      thead th:nth-child(9) {
+        width: 13%;
+      }
+
+      thead th {
+        font-size: 7.5px;
+        padding: 4px 5px;
+        white-space: nowrap;
+        overflow: visible;
+      }
+
+      .tbadge {
+        font-size: 7.5px;
+        padding: 2px 5px;
+        white-space: nowrap !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        border-radius: 4px;
+        line-height: 1.1;
+      }
+
+      .tbadge i {
+        font-size: 7px;
+      }
+
+      .t-c {
+        background: #e3f0d4 !important;
+        color: #3d6b28 !important;
+      }
+
+      .t-d {
+        background: #fff3cd !important;
+        color: #7a5c00 !important;
+      }
+
+      .t-p {
+        background: #dde9fa !important;
+        color: #1e2e4a !important;
+      }
+
+      .date-s,
+      .date-e {
+        font-size: 9px;
+      }
+
+      .ap-tag {
+        font-size: 9px;
+        padding: 1px 5px;
+      }
+
+      .aa-code {
+        font-size: 7.5px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .hdr-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hdr-logo,
+      .hdr-badge {
+        display: none;
+      }
+
+      .content,
+      .toolbar,
+      .filters {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .date-band {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 8px 12px;
+      }
+
+      .filter-group {
+        border-right: none;
+        border-bottom: 1px solid var(--v-bdr);
+        width: 100%;
+        padding: 6px 0;
+        margin-left: 0 !important;
+      }
+
+      .filter-group:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="lov" id="lov">
+    <div class="sp"></div>
+    <div class="lt">Cargando cronograma...</div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-inner">
+      <div class="hdr-logo"><i class="fas fa-laptop-code"></i></div>
+      <div class="hdr-center">
+        <div class="hdr-tag"><i class="fas fa-building"></i>&nbsp; Centro Latinoamericano de Especies Menores – Regional
+          Valle</div>
+        <div class="hdr-h1"><i class="fas fa-calendar-alt"></i>&nbsp; Cronograma Híbrido · Ejecución y Evaluación</div>
+        <div class="hdr-prog">Programa de Formación Titulada · Ficha 3186697</div>
+        <div class="hdr-sub">Tecnología en Análisis y Desarrollo de Software</div>
+      </div>
+      <div class="hdr-badge"><i class="fas fa-sitemap"></i></div>
+    </div>
+    <div class="date-band">
+      <div class="di"><i class="fas fa-play-circle"></i><span>Inicio:</span><strong>21/10/26</strong></div>
+      <div class="di" style="opacity:.25"><i class="fas fa-long-arrow-alt-right" style="font-size:16px;color:#fff"></i>
+      </div>
+      <div class="di"><i class="fas fa-flag-checkered"></i><span>Fin:</span><strong>07/12/26</strong></div>
+    </div>
+  </header>
+
+  <!-- FILTROS + ACCIONES -->
+  <div class="filters" id="filtersBar">
+    <!-- Semana -->
+    <div class="filter-group">
+      <span class="fl"><i class="fas fa-hashtag"></i> Semana</span>
+      <button class="fb" id="btnEstaSemana" onclick="toggleEstaSemana(this)"><i class="far fa-calendar-alt"></i> Esta
+        Semana</button>
+      <select id="selSem" onchange="onSemChange()"
+        style="padding:2px 6px;border-radius:7px;border:1.5px solid var(--v-bdr);font-size:9.5px;font-family:'Barlow',sans-serif;color:var(--texto);background:var(--v-bg);cursor:pointer;">
+        <option value="">Todas</option>
+      </select>
+    </div>
+    <!-- Actividad de Proyecto -->
+    <div class="filter-group">
+      <span class="fl"><i class="fas fa-tasks"></i> Actividad Proyecto</span>
+      <select id="selAP" onchange="applyFilters()"
+        style="padding:2px 6px;border-radius:7px;border:1.5px solid var(--v-bdr);font-size:9.5px;font-family:'Barlow',sans-serif;color:var(--texto);background:var(--v-bg);cursor:pointer;max-width:160px;">
+        <option value="">Todas</option>
+      </select>
+    </div>
+    <!-- Área -->
+    <div class="filter-group">
+      <span class="fl"><i class="fas fa-users"></i> Área</span>
+      <button class="fb navy active" data-af="all" onclick="setAF(this)">Todas</button>
+      <button class="fb navy" data-af="técnico" onclick="setAF(this)"><i class="fas fa-chalkboard-teacher"></i> Técnico</button>
+      <button class="fb navy" data-af="transversal" onclick="setAF(this)"><i class="fas fa-exchange-alt"></i> Transversales</button>
+      <button class="fb navy" data-af="emprendimiento" onclick="setAF(this)"><i class="fas fa-lightbulb"></i> Emprendimiento</button>
+      <button class="fb navy" data-af="derechos fundamentales" onclick="setAF(this)"><i class="fas fa-balance-scale"></i> Derechos Fundamentales</button>
+    </div>
+    <!-- Limpiar + Acciones -->
+    <div class="filter-group" style="border-right:none;margin-left:auto;gap:6px;padding-right:0;padding-left:0;">
+      <button class="btn-clear" onclick="clearAllFilters()"><i class="fas fa-times"></i> Limpiar filtros</button>
+      <button class="btn btn-pdf" onclick="window.print()"
+        style="padding:4px 20px;font-size:9.5px;min-width:110px;justify-content:center;white-space:nowrap;"><i
+          class="fas fa-file-pdf"></i> Descargar PDF</button>
+    </div>
+  </div>
+
+  <!-- Filter summary -->
+  <div class="filter-summary" id="filterSummary" style="display:none">
+    <div class="filter-tags" id="filterTags"></div>
+    <div class="result-count" id="resultCount"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content" id="mc">
+    <div class="no-data"><i class="fas fa-database"></i><strong>Cargando cronograma...</strong></div>
+  </div>
+
+  <footer>
+    <span>SENA</span> · Centro Latinoamericano de Especies Menores · Regional Valle
+  </footer>
+
+  <!-- PRINT FOOTER (visible solo en impresión) -->
+  <div id="printFooter" style="display:none;">
+    <span>SENA</span> · Centro Latinoamericano de Especies Menores · Regional Valle
+  </div>
+
+  <script>
+    // ══════════════════════════════════════════════════
+    //  ⚙️  URL de Google Apps Script:
+    // ══════════════════════════════════════════════════
+    const SHEETS_URL = ''; // híbrido: usa los datos embebidos
+
+    const C = {
+      FASE: 'Nombre de la Fase', AP: 'Actividades de proyecto',
+      RA: 'Resultados de Aprendizaje', AA: 'Actividad de aprendizaje',
+      INI: 'Fecha inicio', FIN: 'Fecha de fin',
+      TIPO: 'Tipo de evidencia', EV: 'Evidencias de aprendizaje',
+      COD: 'Código', AREA: 'Área responsable'
+    };
+
+    let FASE_START = new Date(2026, 9, 13); // 13/10/2026 — inicio de la fase
+
+    let curArea = 'all', curSem = '', curAP = '';
+    let curSemEsta = false;
+    let allData = [];
+
+    // ── RECESOS ─────────────────────────────────────────────────────────────────
+    // Receso fin/inicio de año: mar 01/12/26 → mar 02/02/27 (9 semanas sin clase)
+    // S7 termina lunes 30/11/26 · S8 empieza martes 02/02/27
+    const RECESOS = [
+      { start: new Date(2026, 11, 1), end: new Date(2027, 1, 2) }
+    ];
+
+    /**
+     * Retrocede una fecha al MARTES de su semana (ciclo SENA: mar → lun).
+     */
+    function floorToTuesday(d) {
+      const day = d.getDay();
+      const offset = day === 0 ? 5 : day === 1 ? 6 : day - 2;
+      const t = new Date(d);
+      t.setDate(t.getDate() - offset);
+      t.setHours(0, 0, 0, 0);
+      return t;
+    }
+
+    /**
+     * Número de semana lectiva global de la fase (base 13/10/26, ciclo Mar→Lun).
+     * Descuenta las semanas del receso de fin de año.
+     */
+    const SEMANAS = [
+      { n: 1, a: new Date(2026, 9, 21), b: new Date(2026, 9, 25) },
+      { n: 2, a: new Date(2026, 9, 28), b: new Date(2026, 10, 1) },
+      { n: 3, a: new Date(2026, 10, 4), b: new Date(2026, 10, 8) },
+      { n: 4, a: new Date(2026, 10, 11), b: new Date(2026, 10, 15) },
+      { n: 5, a: new Date(2026, 10, 18), b: new Date(2026, 10, 22) },
+      { n: 6, a: new Date(2026, 10, 25), b: new Date(2026, 11, 7) }
+    ];
+    function weekNum(dateStr) {
+      const d = parseDate(dateStr); if (!d) return 1;
+      const t = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+      for (const s of SEMANAS) { if (t >= s.a && t <= s.b) return s.n; }
+      for (const s of SEMANAS) { if (t < s.a) return s.n; }
+      return 0; // fuera del cronograma
+    }
+
+    function weekRange(ini, fin) {
+      const a = weekNum(ini), b = weekNum(fin);
+      return a === b ? `Sem. ${a}` : `Sem. ${a}–${b}`;
+    }
+
+    function parseDate(s) {
+      if (!s) return null;
+      const str = String(s).trim();
+      const p = str.split('/');
+      if (p.length === 3 && p[0].length <= 2 && p[1].length <= 2 && p[2].length <= 4) {
+        const day = parseInt(p[0], 10), mon = parseInt(p[1], 10) - 1;
+        const yr = parseInt(p[2], 10);
+        return new Date(yr < 100 ? 2000 + yr : yr, mon, day);
+      }
+      const isoMatch = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      if (isoMatch) {
+        return new Date(parseInt(isoMatch[1], 10), parseInt(isoMatch[2], 10) - 1, parseInt(isoMatch[3], 10));
+      }
+      const d = new Date(str);
+      if (!isNaN(d.getTime())) return d;
+      return null;
+    }
+
+    function formatDateDMY(s) {
+      const d = parseDate(s);
+      if (!d) return s || '';
+      const dd = String(d.getDate()).padStart(2, '0');
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const yy = String(d.getFullYear()).slice(-2);
+      return dd + '/' + mm + '/' + yy;
+    }
+
+    function normalizeDateStr(dStr) {
+      if (!dStr) return '';
+      const str = String(dStr).trim();
+      const p = str.split('/');
+      if (p.length === 3) {
+        let day = p[0].padStart(2, '0');
+        let month = p[1].padStart(2, '0');
+        let year = p[2].length === 4 ? p[2].slice(-2) : p[2];
+        return `${day}/${month}/${year}`;
+      }
+      return formatDateDMY(str);
+    }
+
+    function normalizeRow(r) {
+      if (r[C.INI]) r[C.INI] = formatDateDMY(r[C.INI]);
+      if (r[C.FIN]) r[C.FIN] = formatDateDMY(r[C.FIN]);
+      return r;
+    }
+
+    function propagarCamposVacios(data) {
+      const campos = [C.FASE, C.AP, C.RA, C.AA];
+      const last = {};
+      campos.forEach(k => { last[k] = ''; });
+
+      data.forEach(r => {
+        if (r[C.COD] === 'GA10-240201529-AA2-EV01' || r[C.COD] === 'GA10-240201529-AA2-EV02') {
+          if (!r[C.RA] || r[C.RA].trim() === '') {
+            r[C.RA] = '240201529-02. Caracterizar la idea de negocio teniendo en cuenta las oportunidades y necesidades del sector productivo y social.<br><br>240201529-03. Estructurar el plan de negocio de acuerdo con las características empresariales y tendencias de mercado.';
+          }
+        }
+        campos.forEach(k => {
+          if (r[k] && r[k].trim() !== '') {
+            last[k] = r[k];
+          } else {
+            r[k] = last[k];
+          }
+        });
+        if (r[C.AREA]) {
+          r[C.AREA] = normalizarAreaJS(r[C.AREA]);
+        }
+      });
+
+      return data;
+    }
+
+    function normalizarAreaJS(raw) {
+      const s = (raw || '').toLowerCase().trim();
+      if (!s || s === 'instructor') return raw;
+      if (/^instructors*-s*.+/i.test(raw)) return raw;
+      const parte = raw.replace(/^instructors*[-–]?s*/i, '').trim() || raw;
+      return 'Instructor - ' + parte;
+    }
+
+    function tipoIcon(t) {
+      t = (t || '').toLowerCase();
+      if (t.includes('conocimiento')) return '<i class="fas fa-book-open"></i>';
+      if (t.includes('desempeño')) return '<i class="fas fa-star"></i>';
+      if (t.includes('producto')) return '<i class="fas fa-box"></i>';
+      return '<i class="fas fa-file"></i>';
+    }
+
+    function tipoClass(t) {
+      t = (t || '').toLowerCase();
+      if (t.includes('conocimiento')) return 't-c';
+      if (t.includes('desempeño')) return 't-d';
+      if (t.includes('producto')) return 't-p';
+      return '';
+    }
+
+    function tipoClean(t) {
+      const s = (t || '').replace(/^Evidencia de\s*/i, '').trim();
+      return s ? s.charAt(0).toUpperCase() + s.slice(1) : '—';
+    }
+
+    function areaIcon(a) {
+      a = (a || '').toLowerCase();
+      if (a.includes('derechos fundamentales')) return 'fas fa-balance-scale';
+      if (a.includes('bilingü') || a.includes('bilingu')) return 'fas fa-language';
+      if (a.includes('cultura física') || a.includes('cultura fisica')) return 'fas fa-running';
+      if (a.includes('sst')) return 'fas fa-hard-hat';
+      if (a.includes('cultura de paz') || a.includes('paz')) return 'fas fa-dove';
+      if (a.includes('emprendimiento')) return 'fas fa-lightbulb';
+      if (a.includes('transversal')) return 'fas fa-exchange-alt';
+      return 'fas fa-chalkboard-teacher';
+    }
+
+    function areaClass(a) {
+      a = (a || '').toLowerCase();
+      if (a.includes('derechos fundamentales')) return 'ar-derechos';
+      if (a.includes('bilingü') || a.includes('bilingu')) return 'ar-bilinguismo';
+      if (a.includes('cultura física') || a.includes('cultura fisica')) return 'ar-cultfisica';
+      if (a.includes('sst')) return 'ar-sst';
+      if (a.includes('cultura de paz') || a.includes('paz')) return 'ar-cultpaz';
+      if (a.includes('emprendimiento')) return 'ar-emprendimiento';
+      if (a.includes('transversal')) return 'ar-other';
+      return 'ar-tecnico';
+    }
+
+    function passes(r) {
+      if (curArea !== 'all' && !(r[C.AREA] || '').toLowerCase().includes(curArea)) return false;
+      if (curSem !== '') {
+        const ws = weekNum(r[C.INI]), we = weekNum(r[C.FIN]);
+        const sw = parseInt(curSem, 10);
+        if (sw < ws || sw > we) return false;
+      }
+      if (curAP !== '' && r[C.AP] !== curAP) return false;
+      return true;
+    }
+
+    function getCurrentWeekNum() {
+      const now = new Date();
+      const s = String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + String(now.getFullYear()).slice(-2);
+      return weekNum(s);
+    }
+    let currentWeekNum = getCurrentWeekNum();
+
+    function toggleEstaSemana(btn) {
+      curSemEsta = !curSemEsta;
+      if (curSemEsta) {
+        btn.classList.add('active');
+        document.getElementById('selSem').value = '';
+        curSem = String(currentWeekNum);
+      } else {
+        btn.classList.remove('active');
+        curSem = '';
+      }
+      applyFilters();
+    }
+
+    function onSemChange() {
+      const selSemVal = document.getElementById('selSem').value;
+      if (selSemVal !== '') {
+        curSemEsta = false;
+        const btnEsta = document.getElementById('btnEstaSemana');
+        if (btnEsta) btnEsta.classList.remove('active');
+        curSem = selSemVal;
+      } else {
+        curSem = curSemEsta ? String(currentWeekNum) : '';
+      }
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const selSemVal = document.getElementById('selSem').value;
+      if (selSemVal !== '') {
+        curSem = selSemVal;
+      } else {
+        curSem = curSemEsta ? String(currentWeekNum) : '';
+      }
+      curAP = document.getElementById('selAP').value;
+      renderData(allData);
+    }
+
+    function setAF(btn) {
+      curArea = btn.dataset.af;
+      document.querySelectorAll('[data-af]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    }
+
+    function resetAreaButtons() {
+      document.querySelectorAll('[data-af]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-af="all"]').classList.add('active');
+    }
+
+    function clearAllFilters() {
+      curArea = 'all'; curSem = ''; curAP = '';
+      resetAreaButtons();
+      curSemEsta = false;
+      const btnEsta = document.getElementById('btnEstaSemana');
+      if (btnEsta) btnEsta.classList.remove('active');
+      document.getElementById('selSem').value = '';
+      document.getElementById('selAP').value = '';
+      renderData(allData);
+    }
+
+    function removeFilter(which) {
+      if (which === 'area') { curArea = 'all'; resetAreaButtons(); }
+      if (which === 'sem') {
+        curSem = '';
+        curSemEsta = false;
+        const btnEsta = document.getElementById('btnEstaSemana');
+        if (btnEsta) btnEsta.classList.remove('active');
+        document.getElementById('selSem').value = '';
+      }
+      if (which === 'ap') {
+        document.getElementById('selAP').value = '';
+      }
+      applyFilters();
+    }
+
+    function updateFilterSummary(visibleCount, totalCount) {
+      const summary = document.getElementById('filterSummary');
+      const tagsEl = document.getElementById('filterTags');
+      const countEl = document.getElementById('resultCount');
+      const hasFilter = curArea !== 'all' || curSem !== '' || curAP !== '';
+      summary.style.display = hasFilter ? 'flex' : 'none';
+      if (!hasFilter) return;
+      let tags = '';
+      if (curArea !== 'all') {
+        const labels = { 'técnico': 'Técnico', 'transversal': 'Transversales', 'emprendimiento': 'Emprendimiento', 'derechos fundamentales': 'Derechos Fundamentales' };
+        tags += `<span class="filter-tag"><i class="fas fa-users"></i> ${labels[curArea] || curArea} <i class="fas fa-times" onclick="removeFilter('area')"></i></span>`;
+      }
+      if (curSem !== '') {
+        const semLabel = curSem === String(currentWeekNum) ? `Semana ${curSem} (actual)` : `Semana ${curSem}`;
+        tags += `<span class="filter-tag" style="background:#5a8f3c"><i class="fas fa-hashtag"></i> ${semLabel} <i class="fas fa-times" onclick="removeFilter('sem')"></i></span>`;
+      }
+      if (curAP !== '') {
+        const apLabel = (curAP.match(/^(AP\d+)/) || ['', 'AP'])[1];
+        tags += `<span class="filter-tag" style="background:#7a5c00"><i class="fas fa-tasks"></i> ${apLabel} <i class="fas fa-times" onclick="removeFilter('ap')"></i></span>`;
+      }
+      tagsEl.innerHTML = tags;
+      countEl.innerHTML = `<i class="fas fa-filter"></i> Mostrando <span>${visibleCount}</span> de <span>${totalCount}</span> evidencias`;
+    }
+
+    function populateSelects(data) {
+      const semSet = new Set();
+      data.forEach(r => {
+        const ws = weekNum(r[C.INI]), we = weekNum(r[C.FIN]);
+        for (let s = ws; s <= we; s++) semSet.add(s);
+      });
+      const selSem = document.getElementById('selSem');
+      selSem.innerHTML = '<option value="">Todas</option>';
+      [...semSet].sort((a, b) => a - b).forEach(s => {
+        selSem.innerHTML += `<option value="${s}">Semana ${s}</option>`;
+      });
+
+      const apSet = new Set();
+      data.forEach(r => apSet.add(r[C.AP]));
+      const selAP = document.getElementById('selAP');
+      selAP.innerHTML = '<option value="">Todas</option>';
+      [...apSet].forEach(ap => {
+        const label = ap.match(/^(AP\d+)/)?.[1] || 'AP';
+        const short = label + '. ' + ap.replace(/^AP\d+\.\s*/, '').substring(0, 38) + '…';
+        selAP.innerHTML += `<option value="${ap.replace(/"/g, '&quot;')}" title="${ap.replace(/"/g, '&quot;')}">${short}</option>`;
+      });
+    }
+
+    // Códigos relacionados: GA · Competencia · AA · EV
+    function relHtml(cod) {
+      const m = (cod || '').match(/^(GA\d+)-(\d{9})-(AA\d+)-(EV\d+)$/);
+      if (!m) return '';
+      return `<span class="rel-chip">${m[1]}</span><span class="rel-chip rel-comp">Comp. ${m[2]}</span><span class="rel-chip">${m[3]}</span><span class="rel-chip">${m[4]}</span>`;
+    }
+
+    function togF(i) {
+      document.getElementById('fb' + i).classList.toggle('collapsed');
+    }
+
+    function renderData(data) {
+      allData = data;
+      const S = {};
+      data.forEach(r => {
+        const f = r[C.FASE] || '—', ap = r[C.AP] || '—', ra = r[C.RA] || '—', aa = r[C.AA] || '—';
+        if (!S[f]) S[f] = {};
+        if (!S[f][ap]) S[f][ap] = {};
+        if (!S[f][ap][ra]) S[f][ap][ra] = {};
+        if (!S[f][ap][ra][aa]) S[f][ap][ra][aa] = [];
+        S[f][ap][ra][aa].push(r);
+      });
+
+      const fIcons = ['fa-code', 'fa-laptop-code', 'fa-sitemap', 'fa-cogs'];
+      let out = ''; let fi = 0;
+
+      for (const [fname, aps] of Object.entries(S)) {
+        const apVisCount = {};
+        const raVisCount = {};
+        const aaVisRows = {};
+
+        for (const [apName, ras] of Object.entries(aps)) {
+          let apTotal = 0;
+          for (const [raName, aas] of Object.entries(ras)) {
+            const raKey = apName + '|||' + raName;
+            let raTotal = 0;
+            for (const [aaName, rows] of Object.entries(aas)) {
+              const aaKey = apName + '|||' + raName + '|||' + aaName;
+              const vis = rows.filter(passes);
+              aaVisRows[aaKey] = vis;
+              raTotal += vis.length;
+            }
+            raVisCount[raKey] = raTotal;
+            apTotal += raTotal;
+          }
+          apVisCount[apName] = apTotal;
+        }
+
+        const visTotal = Object.values(apVisCount).reduce((s, v) => s + v, 0);
+
+        out += `<div class="fase-block" id="fb${fi}">
+    <div class="fh" onclick="togF(${fi})">
+      <div class="fi2"><i class="fas ${/EVALUACI/i.test(fname) ? 'fa-magnifying-glass' : fIcons[fi % fIcons.length]}"></i></div>
+      <div class="ft">${fname}</div>
+      <span class="ficha-badge">FICHA: 3186697</span>
+      <i class="fas fa-chevron-down ftog"></i>
+    </div>
+    <div class="tw"><table>
+    <thead><tr>
+      <th style="min-width:148px"><i class="fas fa-tasks"></i> Actividad de Proyecto</th>
+      <th style="min-width:150px"><i class="fas fa-graduation-cap"></i> Resultado de Aprendizaje</th>
+      <th style="min-width:162px"><i class="fas fa-chalkboard"></i> Actividad de Aprendizaje</th>
+      <th style="min-width:70px;text-align:center"><i class="fas fa-calendar-plus"></i> F. Inicio</th>
+      <th style="min-width:70px;text-align:center"><i class="fas fa-calendar-check"></i> F. Fin</th>
+      <th class="col-sem" style="min-width:60px;text-align:center"><i class="fas fa-hashtag"></i> Semana</th>
+      <th class="col-tipo" style="min-width:105px;text-align:center"><i class="fas fa-tag"></i> Tipo de Evidencia</th>
+      <th style="min-width:205px"><i class="fas fa-file-alt"></i> Evidencia de Aprendizaje</th>
+      <th style="min-width:112px"><i class="fas fa-user-tie"></i> Área Responsable</th>
+    </tr></thead><tbody>`;
+
+        if (visTotal === 0) {
+          out += `<tr class="no-rows"><td colspan="9">No hay evidencias que coincidan con los filtros seleccionados.</td></tr>`;
+        } else {
+          for (const [apName, ras] of Object.entries(aps)) {
+            const apVisC = apVisCount[apName]; if (!apVisC) continue;
+            let apFirst = true;
+            const apLabel = apName.match(/^(AP\d+)\./)?.[1] || 'AP';
+            const apTitle = apName.replace(/^AP\d+\.\s*/, '');
+
+            for (const [raName, aas] of Object.entries(ras)) {
+              const raKey = apName + '|||' + raName;
+              const raVisC = raVisCount[raKey]; if (!raVisC) continue;
+              let raFirst = true;
+
+              for (const [aaName, rows] of Object.entries(aas)) {
+                const aaKey = apName + '|||' + raName + '|||' + aaName;
+                const aaVis = aaVisRows[aaKey]; if (!aaVis || !aaVis.length) continue;
+                const m = aaName.match(/^([\w-]+)\.\s*(.*)/s);
+                const aaCode = m ? m[1] : '';
+                const aaTitle = m ? m[2] : aaName;
+                let aaFirst = true;
+
+                for (const r of aaVis) {
+                  const tipo = r[C.TIPO] || '';
+                  const area = r[C.AREA] || '';
+                  const sw = weekNum(r[C.INI]);
+                  const sr = weekRange(r[C.INI], r[C.FIN]);
+                  const cod = r[C.COD] || '';
+                  const ev = r[C.EV] || '';
+
+                  const link = LINKS[cod] || '';
+                  const evHtml = link ? `<a href="${link}" target="_blank" class="ev-link" title="${cod}">${ev}</a>` : ev;
+                  const codHtml = link ? `<a href="${link}" target="_blank" class="ev-link" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--v2);">${cod}</a>` : cod;
+
+                  out += `<tr>`;
+                  if (apFirst) { out += `<td class="c-ap" rowspan="${apVisC}"><span class="ap-tag">${apLabel}</span><br>${apTitle}</td>`; apFirst = false; }
+                  if (raFirst) {
+                    const rm = raName.match(/^(\d{9}-\d{2})\.\s*(.*)/s);
+                    const raCode = rm ? rm[1] : '', raTxt = rm ? rm[2] : raName;
+                    out += `<td class="c-ra" rowspan="${raVisC}"><span class="cod-tag cod-ra"><i class="fas fa-graduation-cap"></i> RA ${raCode}</span><br>${raTxt}</td>`; raFirst = false;
+                  }
+                  if (aaFirst) { out += `<td class="c-aa" rowspan="${aaVis.length}"><span class="cod-tag cod-ga">${aaCode}</span><br>${aaTitle}</td>`; aaFirst = false; }
+                  out += `
+              <td style="text-align:center;white-space:nowrap"><span class="date-s">${r[C.INI] || '—'}</span></td>
+              <td style="text-align:center;white-space:nowrap"><span class="date-e">${r[C.FIN] || '—'}</span></td>
+              <td class="sem-wrap col-sem"><span class="sem-b">S${sw}</span><span class="sem-r">${sr}</span></td>
+              <td class="col-tipo" style="text-align:center"><span class="tbadge ${tipoClass(tipo)}">${tipoIcon(tipo)} ${tipoClean(tipo)}</span></td>
+              <td><div class="ev-t">${evHtml}</div><div class="ev-c">${codHtml}</div></td>
+              <td><span class="ar-b ${areaClass(area)}"><i class="${areaIcon(area)}"></i> ${area || '—'}</span></td>
+              </tr>`;
+                  aaFirst = false;
+                }
+              }
+            }
+          }
+        }
+        out += `</tbody></table></div></div>`;
+        fi++;
+      }
+
+      const totalCount = data.length;
+      let visibleCount = 0;
+      data.forEach(r => { if (passes(r)) visibleCount++; });
+
+      const mc = document.getElementById('mc');
+      mc.innerHTML = out || '<div class="no-data"><i class="fas fa-database"></i><strong>No hay evidencias que coincidan con los filtros.</strong><br><button class="btn btn-o" style="margin-top:12px" onclick="clearAllFilters()"><i class="fas fa-times"></i> Limpiar filtros</button></div>';
+      updateFilterSummary(visibleCount, totalCount);
+    }
+
+
+
+    function updateHeaderDates(dataset) {
+      const list = dataset || DATA;
+      let minDate = null;
+      let maxDate = null;
+      list.forEach(r => {
+        const dIni = parseDate(r[C.INI]);
+        const dFin = parseDate(r[C.FIN]);
+        if (dIni) {
+          if (!minDate || dIni < minDate) minDate = dIni;
+        }
+        if (dFin) {
+          if (!maxDate || dFin > maxDate) maxDate = dFin;
+        }
+      });
+
+      if (minDate) {
+        FASE_START = minDate;
+        const day = String(minDate.getDate()).padStart(2, '0');
+        const month = String(minDate.getMonth() + 1).padStart(2, '0');
+        const year = String(minDate.getFullYear()).slice(-2);
+        const dateBand = document.querySelector('.date-band');
+        if (dateBand) {
+          const strongs = dateBand.querySelectorAll('strong');
+          if (strongs.length >= 1) {
+            strongs[0].textContent = `${day}/${month}/${year}`;
+          }
+        }
+      }
+      if (maxDate) {
+        const day = String(maxDate.getDate()).padStart(2, '0');
+        const month = String(maxDate.getMonth() + 1).padStart(2, '0');
+        const year = String(maxDate.getFullYear()).slice(-2);
+        const dateBand = document.querySelector('.date-band');
+        if (dateBand) {
+          const strongs = dateBand.querySelectorAll('strong');
+          if (strongs.length >= 2) {
+            strongs[1].textContent = `${day}/${month}/${year}`;
+          }
+        }
+      }
+    }
+
+    // ── LINKS DE EVIDENCIAS EN PLATAFORMA ZAJUNA (FICHA 3186697) ────────────────
+    const LINKS = {
+      'GA0-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503876',
+      'GA0-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503877',
+      'GA0-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503878',
+      'GA0-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503879',
+      'GA0-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503875',
+      'GA1-220501046-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503918',
+      'GA1-220501046-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503919',
+      'GA1-220501046-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503920',
+      'GA1-220501046-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503921',
+      'GA1-220501092-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503902',
+      'GA1-220501092-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503903',
+      'GA1-220501092-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503904',
+      'GA1-220501092-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503905',
+      'GA1-220501092-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503906',
+      'GA1-220501092-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503907',
+      'GA1-220501092-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503908',
+      'GA1-220501092-AA3-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503909',
+      'GA1-220501092-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503910',
+      'GA1-220501092-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503911',
+      'GA1-220501092-AA5-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503912',
+      'GA1-220501092-AA5-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503913',
+      'GA1-220501093-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503914',
+      'GA1-220501093-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503915',
+      'GA1-220501093-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503916',
+      'GA1-220501093-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503917',
+      'GA1-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503922',
+      'GA1-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503923',
+      'GA1-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503924',
+      'GA10-220501097-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504128',
+      'GA10-220501097-AA10-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504137',
+      'GA10-220501097-AA11-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504138',
+      'GA10-220501097-AA12-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504139',
+      'GA10-220501097-AA13-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504140',
+      'GA10-220501097-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504129',
+      'GA10-220501097-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504130',
+      'GA10-220501097-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504131',
+      'GA10-220501097-AA5-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504132',
+      'GA10-220501097-AA6-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504133',
+      'GA10-220501097-AA7-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504134',
+      'GA10-220501097-AA8-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504135',
+      'GA10-220501097-AA9-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504136',
+      'GA10-240201529-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504141',
+      'GA10-240201529-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504142',
+      'GA10-240201529-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504143',
+      'GA10-240201529-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504144',
+      'GA11-210201501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504157',
+      'GA11-210201501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504158',
+      'GA11-210201501-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504159',
+      'GA11-210201501-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504160',
+      'GA11-210201501-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504161',
+      'GA11-210201501-AA2-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504162',
+      'GA11-210201501-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504163',
+      'GA11-210201501-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504164',
+      'GA11-210201501-AA3-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504165',
+      'GA11-210201501-AA3-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504166',
+      'GA11-210201501-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504167',
+      'GA11-210201501-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504168',
+      'GA11-220501098-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504149',
+      'GA11-220501098-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504150',
+      'GA11-220501098-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504151',
+      'GA11-220501098-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504152',
+      'GA11-220501098-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504153',
+      'GA11-220501098-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504154',
+      'GA11-220501098-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504155',
+      'GA11-220501098-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504156',
+      'GA2-220501093-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503935',
+      'GA2-220501093-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503936',
+      'GA2-220501093-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503937',
+      'GA2-220501093-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503938',
+      'GA2-220501093-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503939',
+      'GA2-220501093-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503940',
+      'GA2-220501093-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503941',
+      'GA2-220501094-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503942',
+      'GA2-220501094-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503943',
+      'GA2-220501094-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503944',
+      'GA2-220501094-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503945',
+      'GA2-220501094-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503946',
+      'GA2-220501094-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503947',
+      'GA2-220501094-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503948',
+      'GA2-220501094-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503949',
+      'GA2-240201528-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503950',
+      'GA2-240201528-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503951',
+      'GA2-240201528-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503952',
+      'GA2-240201528-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503953',
+      'GA2-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503954',
+      'GA2-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503955',
+      'GA2-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503956',
+      'GA2-240202501-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503957',
+      'GA2-240202501-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503958',
+      'GA2-240202501-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503959',
+      'GA3-220201501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503972',
+      'GA3-220201501-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503973',
+      'GA3-220201501-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503974',
+      'GA3-220201501-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503975',
+      'GA3-220201501-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503976',
+      'GA3-220501093-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503965',
+      'GA3-220501093-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503966',
+      'GA3-220501093-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503967',
+      'GA3-220501093-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503968',
+      'GA3-220501093-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503969',
+      'GA3-220501093-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503970',
+      'GA3-220501093-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503971',
+      'GA3-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503977',
+      'GA3-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503978',
+      'GA3-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503979',
+      'GA3-240202501-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3503980',
+      'GA3-240202501-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503981',
+      'GA3-240202501-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3503982',
+      'GA4-220501095-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503995',
+      'GA4-220501095-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503996',
+      'GA4-220501095-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503997',
+      'GA4-220501095-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503998',
+      'GA4-220501095-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3503999',
+      'GA4-220501095-AA2-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504000',
+      'GA4-220501095-AA2-EV05': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504001',
+      'GA4-220501095-AA2-EV06': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504002',
+      'GA4-220501095-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504003',
+      'GA4-220501095-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504004',
+      'GA4-220501095-AA3-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504005',
+      'GA4-220501095-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504006',
+      'GA4-220501095-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504007',
+      'GA4-220501095-AA4-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504008',
+      'GA4-220501095-AA4-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504009',
+      'GA4-240201524-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504010',
+      'GA4-240201524-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504011',
+      'GA4-240201524-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504012',
+      'GA4-240201524-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504013',
+      'GA4-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/quiz/view.php?id=3504014',
+      'GA4-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504015',
+      'GA4-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504016',
+      'GA5-220501095-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504021',
+      'GA5-220501095-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504022',
+      'GA5-220501095-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504023',
+      'GA5-220501095-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504024',
+      'GA5-220501095-AA1-EV05': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504025',
+      'GA5-220501095-AA1-EV06': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504026',
+      'GA5-220501095-AA1-EV07': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504027',
+      'GA5-220501095-AA1-EV08': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504028',
+      'GA5-240201064-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504029',
+      'GA5-240201064-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504030',
+      'GA5-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504031',
+      'GA5-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504032',
+      'GA5-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504033',
+      'GA6-220501096-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504042',
+      'GA6-220501096-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504043',
+      'GA6-220501096-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504044',
+      'GA6-220501096-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504045',
+      'GA6-220501096-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504046',
+      'GA6-220501096-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504047',
+      'GA6-220501096-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504048',
+      'GA6-220501096-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504049',
+      'GA6-220501096-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504050',
+      'GA6-220501096-AA3-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504051',
+      'GA6-220501096-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504052',
+      'GA6-220501096-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504053',
+      'GA6-220501096-AA4-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504054',
+      'GA6-230101507-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504055',
+      'GA6-230101507-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504056',
+      'GA6-230101507-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504057',
+      'GA6-230101507-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504058',
+      'GA6-240202501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504059',
+      'GA6-240202501-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504060',
+      'GA6-240202501-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=3504061',
+      'GA7-220501096-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504078',
+      'GA7-220501096-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504079',
+      'GA7-220501096-AA1-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504080',
+      'GA7-220501096-AA1-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504081',
+      'GA7-220501096-AA1-EV05': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504082',
+      'GA7-220501096-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504083',
+      'GA7-220501096-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504084',
+      'GA7-220501096-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504085',
+      'GA7-220501096-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504086',
+      'GA7-220501096-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504087',
+      'GA7-220501096-AA4-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504088',
+      'GA7-220501096-AA4-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504089',
+      'GA7-220501096-AA5-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504090',
+      'GA7-220501096-AA5-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504091',
+      'GA7-220501096-AA5-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504092',
+      'GA7-220501096-AA5-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504093',
+      'GA8-220501096-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504095',
+      'GA8-220501096-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504096',
+      'GA8-220501096-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504097',
+      'GA8-220501096-AA2-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504098',
+      'GA8-220501096-AA2-EV03': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504099',
+      'GA8-220501096-AA2-EV04': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504100',
+      'GA8-220501096-AA2-EV05': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504101',
+      'GA8-220601501-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504102',
+      'GA8-220601501-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504103',
+      'GA8-220601501-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504104',
+      'GA8-220601501-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504105',
+      'GA9-220501096-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504107',
+      'GA9-220501096-AA1-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504108',
+      'GA9-220501096-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504109',
+      'GA9-220501096-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504110',
+      'GA9-220501096-AA3-EV02': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504111',
+      'GA9-240201526-AA1-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504112',
+      'GA9-240201526-AA2-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504113',
+      'GA9-240201526-AA3-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504114',
+      'GA9-240201526-AA4-EV01': 'https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=3504115'
+    };
+
+    // ══ DATOS EMBEBIDOS (HÍBRIDO: FASE 3. EJECUCIÓN + FASE 4. EVALUACIÓN - FICHA 3186697) ════════════════════
+    const DATA = [
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-01. Planear actividades de construcción del software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA1. Configurar herramientas de versionamiento para control de código.', [C.INI]: '21/10/26', [C.FIN]: '25/10/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Informe técnico de plan de trabajo para construcción de software.', [C.COD]: 'GA7-220501096-AA1-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-01. Planear actividades de construcción del software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA1. Configurar herramientas de versionamiento para control de código.', [C.INI]: '21/10/26', [C.FIN]: '25/10/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Definir estándares de codificación, de acuerdo con la plataforma de desarrollo elegida.', [C.COD]: 'GA7-220501096-AA1-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-01. Planear actividades de construcción del software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA1. Configurar herramientas de versionamiento para control de código.', [C.INI]: '21/10/26', [C.FIN]: '25/10/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Identifica herramientas de versionamiento.', [C.COD]: 'GA7-220501096-AA1-EV03', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-01. Planear actividades de construcción del software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA1. Configurar herramientas de versionamiento para control de código.', [C.INI]: '21/10/26', [C.FIN]: '25/10/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Instalación y configuración de herramienta de versionamiento (local/web).', [C.COD]: 'GA7-220501096-AA1-EV04', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-01. Planear actividades de construcción del software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA1. Configurar herramientas de versionamiento para control de código.', [C.INI]: '28/10/26', [C.FIN]: '01/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Herramientas de versionamiento (GIT) instalada y configurada.', [C.COD]: 'GA7-220501096-AA1-EV05', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-02. Construir la base de datos para el software a partir del modelo de datos.', [C.AA]: 'GA6-220501096-AA2. Construir la base de datos a partir del modelo de datos.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Creación de la estructura de la BD y aplicación de restricciones.', [C.COD]: 'GA6-220501096-AA2-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-02. Construir la base de datos para el software a partir del modelo de datos.', [C.AA]: 'GA6-220501096-AA2. Construir la base de datos a partir del modelo de datos.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Script bases de datos del proyecto.', [C.COD]: 'GA6-220501096-AA2-EV03', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA2. Aplicar estándares de codificación.', [C.INI]: '28/10/26', [C.FIN]: '01/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Codificación de módulos del software.', [C.COD]: 'GA7-220501096-AA2-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA2. Aplicar estándares de codificación.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Módulos de software codificados y probados.', [C.COD]: 'GA7-220501096-AA2-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA3. Codificar los módulos del software Stand-alone, web y móvil.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Codificación de módulos del software stand-alone, web y móvil.', [C.COD]: 'GA7-220501096-AA3-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA4. Codificar el front-end utilizando framework.', [C.INI]: '11/11/26', [C.FIN]: '15/11/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Taller sobre componentes front-end.', [C.COD]: 'GA7-220501096-AA4-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA4. Codificar el front-end utilizando framework.', [C.INI]: '11/11/26', [C.FIN]: '15/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Verificación de procedimientos para la definición de componentes front-end de la aplicación.', [C.COD]: 'GA7-220501096-AA4-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA4. Codificar el front-end utilizando framework.', [C.INI]: '11/11/26', [C.FIN]: '15/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Componente front-end del proyecto formativo y proyectos de clase.', [C.COD]: 'GA7-220501096-AA4-EV03', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA5. Crear servicios web.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Diseño y desarrollo de servicios web - caso.', [C.COD]: 'GA7-220501096-AA5-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA7-220501096-AA5. Crear servicios web.', [C.INI]: '04/11/26', [C.FIN]: '08/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Diseño y desarrollo de servicios web – proyecto.', [C.COD]: 'GA7-220501096-AA5-EV03', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA8-220501096-AA1. Integrar módulos.', [C.INI]: '11/11/26', [C.FIN]: '15/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Desarrollar software a partir de la integración de sus módulos componentes.', [C.COD]: 'GA8-220501096-AA1-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-04. Codificar el software de acuerdo con el diseño establecido.', [C.AA]: 'GA8-220501096-AA1. Integrar módulos.', [C.INI]: '11/11/26', [C.FIN]: '15/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Módulos integrados.', [C.COD]: 'GA8-220501096-AA1-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-05. Realizar pruebas al software para verificar su funcionalidad.', [C.AA]: 'GA9-220501096-AA1. Realizar plan de pruebas.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Realiza plan pruebas de software.', [C.COD]: 'GA9-220501096-AA1-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-05. Realizar pruebas al software para verificar su funcionalidad.', [C.AA]: 'GA9-220501096-AA2. Definir casos y ambiente de prueba.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Diseña casos y define el ambiente de pruebas de software según proyecto.', [C.COD]: 'GA9-220501096-AA2-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP7. Codificar los módulos del software.', [C.RA]: '220501096-05. Realizar pruebas al software para verificar su funcionalidad.', [C.AA]: 'GA9-220501096-AA3. Documentar y realizar pruebas.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Reporte de plan de pruebas ejecutadas.', [C.COD]: 'GA9-220501096-AA3-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-01. Planear actividades de implantación del software de acuerdo con las condiciones de la solución informática.', [C.AA]: 'GA10-220501097-AA3. Elaborar el plan de instalación.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Software instalado en la plataforma del cliente.', [C.COD]: 'GA10-220501097-AA3-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-02. Desplegar el software de acuerdo con la arquitectura y las políticas establecidas.', [C.AA]: 'GA10-220501097-AA5. Configurar el software en el servidor y la base de datos.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Configuración de servicios, bases de datos y software en el equipo del cliente.', [C.COD]: 'GA10-220501097-AA5-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-02. Desplegar el software de acuerdo con la arquitectura y las políticas establecidas.', [C.AA]: 'GA10-220501097-AA6. Cargar archivos en el sitio de publicación.', [C.INI]: '18/11/26', [C.FIN]: '22/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Archivos cargados en la plataforma de producción.', [C.COD]: 'GA10-220501097-AA6-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-03. Documentar el proceso de implantación de software siguiendo estándares de calidad.', [C.AA]: 'GA10-220501097-AA10. Elaborar manuales de instalación, técnico y de usuario.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Elabora documentos técnicos y de usuario del software.', [C.COD]: 'GA10-220501097-AA10-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-04. Implantar el software de acuerdo con los niveles de servicio establecidos con el cliente.', [C.AA]: 'GA10-220501097-AA11. Elaborar el manual de usuario.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Elabora el manual de usuario, de acuerdo con las funcionalidades del software.', [C.COD]: 'GA10-220501097-AA11-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-04. Implantar el software de acuerdo con los niveles de servicio establecidos con el cliente.', [C.AA]: 'GA10-220501097-AA12. Capacitar a los usuarios y realizar pruebas de aceptación.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Elabora plan de capacitación y realización de pruebas de aceptación del cliente.', [C.COD]: 'GA10-220501097-AA12-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '220501097-04. Implantar el software de acuerdo con los niveles de servicio establecidos con el cliente.', [C.AA]: 'GA10-220501097-AA13. Elaborar acta de entrega.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Documentación plan de capacitación y acta de entrega del proyecto de software.', [C.COD]: 'GA10-220501097-AA13-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '240201529-01. Integrar elementos de la cultura emprendedora teniendo en cuenta el perfil personal y el contexto de desarrollo social.', [C.AA]: 'GA10-240201529-AA1. Reconocer capacidades personales para convertirse en emprendedor, como parte de su proyecto de vida en términos de desarrollo humano y económico.', [C.INI]: '20/10/26', [C.FIN]: '26/10/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'DOFA personal.', [C.COD]: 'GA10-240201529-AA1-EV01', [C.AREA]: 'Instructor Transversal - Emprendimiento' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '240201529-02. Caracterizar la idea de negocio teniendo en cuenta las oportunidades y necesidades del sector productivo y social.', [C.AA]: 'GA10-240201529-AA2. Definir la idea de negocio a desarrollar en el emprendimiento, según las oportunidades de mercado.', [C.INI]: '27/10/26', [C.FIN]: '02/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Pitch idea de negocio.', [C.COD]: 'GA10-240201529-AA2-EV01', [C.AREA]: 'Instructor Transversal - Emprendimiento' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '240201529-03. Estructurar el plan de negocio de acuerdo con las características empresariales y tendencias de mercado.', [C.AA]: 'GA10-240201529-AA2. Definir la idea de negocio a desarrollar en el emprendimiento, según las oportunidades de mercado.', [C.INI]: '27/10/26', [C.FIN]: '02/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Modelo Canvas del emprendimiento.', [C.COD]: 'GA10-240201529-AA2-EV02', [C.AREA]: 'Instructor Transversal - Emprendimiento' },
+      { [C.FASE]: 'Fase 3. EJECUCIÓN', [C.AP]: 'AP8. Desarrollar las tareas de configuración y puesta en marcha del sistema de información.', [C.RA]: '240201529-04. Valorar la propuesta de negocio conforme con su estructura y necesidades del sector productivo y social.', [C.AA]: 'GA10-240201529-AA3. Establecer el modelo de negocio del emprendimiento a partir de las necesidades identificadas.', [C.INI]: '27/10/26', [C.FIN]: '02/11/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Plan de negocio.', [C.COD]: 'GA10-240201529-AA3-EV01', [C.AREA]: 'Instructor Transversal - Emprendimiento' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '220501098-01. Incorporar actividades de aseguramiento de la calidad del software de acuerdo con estándares de la industria.', [C.AA]: 'GA11-220501098-AA1. Aplicar los instrumentos de calidad de software.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Diseño y diligenciamiento de instrumentos para documentar procesos de calidad del software.', [C.COD]: 'GA11-220501098-AA1-EV03', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '220501098-02. Verificar la calidad del software de acuerdo con las prácticas asociadas en los procesos de desarrollo.', [C.AA]: 'GA11-220501098-AA2. Realizar el informe de evaluación de la calidad de software y bitácora de lecciones aprendidas.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Creación de informe con los resultados del comportamiento del software.', [C.COD]: 'GA11-220501098-AA2-EV01', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '220501098-02. Verificar la calidad del software de acuerdo con las prácticas asociadas en los procesos de desarrollo.', [C.AA]: 'GA11-220501098-AA2. Realizar el informe de evaluación de la calidad de software y bitácora de lecciones aprendidas.', [C.INI]: '25/11/26', [C.FIN]: '07/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Realizar informe de las experiencias aprendidas en el proceso de verificación del software.', [C.COD]: 'GA11-220501098-AA2-EV02', [C.AREA]: 'Instructor Vocero - Técnico' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-01. Reconocer el trabajo como factor de movilidad social y transformación vital con referencia a la fenomenología y a los derechos fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA1. Comparar las condiciones del trabajo en el devenir histórico, de acuerdo con los derechos fundamentales.', [C.INI]: '19/11/26', [C.FIN]: '25/11/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Taller.', [C.COD]: 'GA11-210201501-AA1-EV01', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-01. Reconocer el trabajo como factor de movilidad social y transformación vital con referencia a la fenomenología y a los derechos fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA1. Comparar las condiciones del trabajo en el devenir histórico, de acuerdo con los derechos fundamentales.', [C.INI]: '20/11/26', [C.FIN]: '25/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Foro sobre características del trabajo en contexto local.', [C.COD]: 'GA11-210201501-AA1-EV02', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-02. Valorar la importancia de la ciudadanía laboral con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA2. Reconocer los derechos humanos laborales, con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.INI]: '19/11/26', [C.FIN]: '25/11/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Informe sobre trabajo decente, ciudadanía laboral, derechos individuales y colectivos en el trabajo.', [C.COD]: 'GA11-210201501-AA2-EV01', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-02. Valorar la importancia de la ciudadanía laboral con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA2. Reconocer los derechos humanos laborales, con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.INI]: '19/11/26', [C.FIN]: '25/11/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Gráfico sobre la negociación colectiva.', [C.COD]: 'GA11-210201501-AA2-EV03', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-02. Valorar la importancia de la ciudadanía laboral con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA2. Reconocer los derechos humanos laborales, con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.INI]: '20/11/26', [C.FIN]: '25/11/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Foro sobre el convenio colectivo del trabajo y la libertad sindical.', [C.COD]: 'GA11-210201501-AA2-EV02', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-02. Valorar la importancia de la ciudadanía laboral con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.AA]: 'GA11-210201501-AA2. Reconocer los derechos humanos laborales, con base en el estudio de los derechos humanos y fundamentales en el trabajo.', [C.INI]: '27/11/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Infografía sobre la huelga.', [C.COD]: 'GA11-210201501-AA2-EV04', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-03. Practicar los derechos fundamentales en el trabajo de acuerdo con la Constitución Política y los Convenios Internacionales.', [C.AA]: 'GA11-210201501-AA3. Establecer la importancia de los derechos de los pueblos, de la solidaridad y la paz, de acuerdo con los indicadores de desarrollo humano.', [C.INI]: '27/11/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Mapa mental violación de derechos del trabajo.', [C.COD]: 'GA11-210201501-AA3-EV01', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-03. Practicar los derechos fundamentales en el trabajo de acuerdo con la Constitución Política y los Convenios Internacionales.', [C.AA]: 'GA11-210201501-AA3. Establecer la importancia de los derechos de los pueblos, de la solidaridad y la paz, de acuerdo con los indicadores de desarrollo humano.', [C.INI]: '27/11/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de conocimiento', [C.EV]: 'Cuadro comparativo sobre el derecho de petición y la acción de tutela.', [C.COD]: 'GA11-210201501-AA3-EV03', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-03. Practicar los derechos fundamentales en el trabajo de acuerdo con la Constitución Política y los Convenios Internacionales.', [C.AA]: 'GA11-210201501-AA3. Establecer la importancia de los derechos de los pueblos, de la solidaridad y la paz, de acuerdo con los indicadores de desarrollo humano.', [C.INI]: '27/11/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Texto argumentativo.', [C.COD]: 'GA11-210201501-AA3-EV04', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-03. Practicar los derechos fundamentales en el trabajo de acuerdo con la Constitución Política y los Convenios Internacionales.', [C.AA]: 'GA11-210201501-AA3. Establecer la importancia de los derechos de los pueblos, de la solidaridad y la paz, de acuerdo con los indicadores de desarrollo humano.', [C.INI]: '01/12/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Foro estudio de caso.', [C.COD]: 'GA11-210201501-AA3-EV02', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-04. Participar en acciones solidarias teniendo en cuenta el ejercicio de los derechos humanos, de los pueblos y de la naturaleza.', [C.AA]: 'GA11-210201501-AA4. Comprender la importancia de las acciones e instituciones encargadas de la protección de los derechos del trabajo, los pueblos y la naturaleza, según el contexto territorial específico.', [C.INI]: '27/11/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de producto', [C.EV]: 'Presentación.', [C.COD]: 'GA11-210201501-AA4-EV02', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+      { [C.FASE]: 'Fase 4. EVALUACIÓN', [C.AP]: 'AP9. Realizar actividades de verificación de calidad del software.', [C.RA]: '210201501-04. Participar en acciones solidarias teniendo en cuenta el ejercicio de los derechos humanos, de los pueblos y de la naturaleza.', [C.AA]: 'GA11-210201501-AA4. Comprender la importancia de las acciones e instituciones encargadas de la protección de los derechos del trabajo, los pueblos y la naturaleza, según el contexto territorial específico.', [C.INI]: '01/12/26', [C.FIN]: '03/12/26', [C.TIPO]: 'Evidencia de desempeño', [C.EV]: 'Foro Estado social de derecho.', [C.COD]: 'GA11-210201501-AA4-EV01', [C.AREA]: 'Instructor Transversal - Derechos Fundamentales' },
+    ];
+
+    // ══ UTILIDAD PARA PARSEAR CSV SI SE CONSUME GOOGLE SHEETS PUBLICADO ═══════
+    function parseCSVText(text) {
+      const lines = text.trim().split(/\r?\n/).filter(l => l.trim().length > 0);
+      if (!lines.length) return [];
+      const delimiter = lines[0].includes('\t') ? '\t' : (lines[0].includes(';') ? ';' : ',');
+      const parseLine = line => {
+        const row = [];
+        let cur = '', inQ = false;
+        for (let i = 0; i < line.length; i++) {
+          const c = line[i];
+          if (c === '"') {
+            if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
+            else { inQ = !inQ; }
+          } else if (c === delimiter && !inQ) {
+            row.push(cur.trim()); cur = '';
+          } else {
+            cur += c;
+          }
+        }
+        row.push(cur.trim());
+        return row;
+      };
+      const headers = parseLine(lines[0]);
+      return lines.slice(1).map(l => {
+        const vals = parseLine(l);
+        const obj = {};
+        headers.forEach((h, idx) => { obj[h] = vals[idx] || ''; });
+        return obj;
+      });
+    }
+
+    // ══ SINCRONIZACIÓN CON API GOOGLE APPS SCRIPT / GOOGLE SHEETS ══════════════
+    async function syncData() {
+      const lov = document.getElementById('lov');
+      if (!SHEETS_URL || SHEETS_URL === 'TU_URL_DE_APPS_SCRIPT_AQUI') {
+        populateSelects(DATA);
+        renderData(DATA);
+        if (lov) lov.classList.remove('show');
+        return;
+      }
+      if (lov) lov.classList.add('show');
+      try {
+        const fetchUrl = SHEETS_URL + (SHEETS_URL.includes('?') ? '&' : '?') + '_ts=' + Date.now();
+        const res = await fetch(fetchUrl, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const rawText = await res.text();
+        let json = null;
+        try {
+          json = JSON.parse(rawText);
+        } catch (err) {
+          if (rawText.includes(',') || rawText.includes('\t') || rawText.includes(';')) {
+            json = parseCSVText(rawText);
+          }
+        }
+
+        let rows = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : null);
+        if (!rows && json && typeof json === 'object') {
+          for (const key of Object.keys(json)) {
+            if (Array.isArray(json[key])) {
+              rows = json[key];
+              break;
+            }
+          }
+        }
+
+        if (rows && rows.length > 0) {
+          const first = rows[0];
+          const hasFullStructure = first && (first[C.FASE] || first['Nombre de la Fase'] || first[C.AP] || first['Actividades de proyecto']);
+
+          if (hasFullStructure) {
+            rows.forEach(normalizeRow);
+            propagarCamposVacios(rows);
+            allData = rows;
+            updateHeaderDates(rows);
+            currentWeekNum = getCurrentWeekNum();
+            populateSelects(rows);
+            renderData(rows);
+          } else {
+            let updated = false;
+            rows.forEach(item => {
+              const cod = item[C.COD] || item.cod || item.codigo || item.code || item['Código'] || item['Codigo'];
+              const rawIni = item[C.INI] || item.ini || item.inicio || item.fecha_inicio || item['Fecha inicio'] || item['Fecha Inicio'];
+              const rawFin = item[C.FIN] || item.fin || item.final || item.fecha_fin || item['Fecha de fin'] || item['Fecha Fin'] || item['Fecha fin'];
+
+              if (cod) {
+                const match = DATA.find(r => r[C.COD] === cod || (r[C.COD] && r[C.COD].trim() === String(cod).trim()));
+                if (match) {
+                  const newIni = normalizeDateStr(rawIni);
+                  const newFin = normalizeDateStr(rawFin);
+                  if (newIni && match[C.INI] !== newIni) {
+                    match[C.INI] = newIni;
+                    updated = true;
+                  }
+                  if (newFin && match[C.FIN] !== newFin) {
+                    match[C.FIN] = newFin;
+                    updated = true;
+                  }
+                }
+              }
+            });
+            updateHeaderDates(DATA);
+            currentWeekNum = getCurrentWeekNum();
+            populateSelects(DATA);
+            renderData(DATA);
+          }
+        } else {
+          throw new Error('Respuesta sin filas válidas');
+        }
+      } catch (e) {
+        console.warn("Fallo en sincronización con la API remota (utilizando cronograma local):", e);
+        updateHeaderDates(DATA);
+        currentWeekNum = getCurrentWeekNum();
+        populateSelects(DATA);
+        renderData(DATA);
+      } finally {
+        if (lov) lov.classList.remove('show');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('lov').classList.add('show');
+      setTimeout(syncData, 300);
+    });
+    setInterval(() => {
+      if (SHEETS_URL && SHEETS_URL !== 'TU_URL_DE_APPS_SCRIPT_AQUI') syncData();
+    }, 5 * 60 * 1000);
+  </script>
+</body>
+
+</html>
